@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 1986141059152214689}
   - component: {fileID: 7927212382864173758}
   - component: {fileID: 4764114696469917950}
-  m_Layer: 0
+  - component: {fileID: 1359004601948734538}
+  - component: {fileID: 8451624668451563586}
+  - component: {fileID: 2470820971852620757}
+  - component: {fileID: 7326829149584172194}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +132,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d18f33f21e314f4aba00cc832ad5eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7.5
+  paddingLeft: 0.5
+  paddingRight: 0.5
+  paddingTop: 5
+  paddingBottom: 2
+--- !u!50 &1359004601948734538
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664361354959483365}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &8451624668451563586
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664361354959483365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.036732852}
+  serializedVersion: 2
+  m_Radius: 0.33425415
+--- !u!114 &2470820971852620757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664361354959483365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f921236c90f8248851868e43c430e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  health: 50
+  score: 0
+  hitEffect: {fileID: 4619991811897230089, guid: df27a6a6f35dfda4fafec25381c57840, type: 3}
+  applyCameraShake: 1
+--- !u!114 &7326829149584172194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664361354959483365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33320da7b47f97c4296c590bd56e102a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8194814132835069410, guid: 91b486d9753745f49aa6b6207a94cb23, type: 3}
+  projectileSpeed: 10
+  projectileLivetime: 5
+  baseFireRate: 0.2
+  fireRateVariance: 0
+  minimumFireRate: 0.1
+  useAI: 0
+  isFiring: 0
 --- !u!1 &6991207586768386621
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8881148207615725721}
   - component: {fileID: 6904166767061534541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: playerShip3_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +283,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2f03e1053750bd34a894e87e4bbc2578, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
