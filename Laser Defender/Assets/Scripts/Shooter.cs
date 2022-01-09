@@ -11,8 +11,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] float baseFireRate = 0.5f;
 
     [Header("AI")]
-    [SerializeField] float fireRateVariance = 0f;
     [SerializeField] float minimumFireRate = 0.1f;
+    [SerializeField] float fireRateVariance = 0f;
     [SerializeField] bool useAI;
 
     [HideInInspector] public bool isFiring;
